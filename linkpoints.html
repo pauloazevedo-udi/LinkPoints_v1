@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganhe LinkPoints | LinkedIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f3f2ef;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 30px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px 60px; /* Espaçamento para evitar sobreposição com header e footer */
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            text-align: left;
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        button {
+            background-color: #0a66c2;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #004182;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+            font-size: 12px;
+        }
+
+        .footer-links a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="Imagem/linkedin.jpg" alt="Logotipo do LinkedIn" class="logo">
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Ganhe LinkPoints ao Completar Seu Perfil</h1>
+            <p>Acumule pontos e desbloqueie recompensas enquanto fortalece sua presença profissional.</p>
+            <p>
+                LinkPoints são pontos que você acumula ao preencher etapas importantes do seu perfil. 
+                Com eles, você pode trocar por cursos, insights exclusivos e outros recursos que impulsionam sua 
+                <span style="font-style: italic;">carreira</span>.
+            </p>
+            <ul>
+                <li>Acesso a cursos e treinamentos</li>
+                <li>Consultoria de carreira</li>
+                <li>Insights de mercado exclusivos</li>
+                <li>E muito mais!</li>
+            </ul>
+            <button id="advanceButton">Avançar</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="footer-links">
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('advanceButton').addEventListener('click', function () {
+            setTimeout(() => {
+                window.location.href = "job-alert.html";
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

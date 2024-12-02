@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que tipo de emprego você está buscando?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f3f2ef;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 30px;
+        }
+
+        main {
+            flex: 1;
+            padding: 80px 20px 60px; /* Espaço para evitar sobreposição do header e footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0a66c2;
+            outline: none;
+            box-shadow: 0 0 4px rgba(10, 102, 194, 0.4);
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* Aumenta o tamanho da caixa */
+        }
+
+        button {
+            background-color: #0a66c2;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+           
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #004182;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+            font-size: 12px;
+        }
+
+        .footer-links a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="Imagem/linkedin.jpg" alt="Logotipo do LinkedIn" class="logo">
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Que tipo de emprego você está buscando?</h1>
+            <p>Selecione até 5 cargos e localidades.</p>
+            <form id="jobForm">
+                <label for="job">Cargos *</label>
+                <input type="text" id="job" placeholder="Ex: Gerente de vendas">
+                <div id="job-tags" class="selected-tags"></div>
+
+                <label for="location">Localidades da vaga *</label>
+                <input type="text" id="location" placeholder="Ex: São Paulo, SP">
+                <div id="location-tags" class="selected-tags"></div>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="remote">
+                    <label for="remote">Estou buscando emprego remoto</label>
+                </div>
+
+                <button type="button" id="submitButton">Avançar</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="footer-links">
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function () {
+            setTimeout(() => {
+                window.location.href = "linkpoints.html";
+            }, 1000); // Redireciona após 1 segundo
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

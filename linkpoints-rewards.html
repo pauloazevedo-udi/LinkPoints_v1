@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkPoints | LinkedIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+            overflow: hidden; /* Evita rolagem ao abrir o modal */
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f3f2ef;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header img {
+            height: 32px;
+        }
+
+        .main-content {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .main-content p {
+            color: #555;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Garantir que está acima de todos os elementos */
+        }
+
+        .modal {
+            background-color: #fff;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background-color: #0a66c2;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-body img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-body ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-body ul li::before {
+            content: "✔";
+            color: #0a66c2;
+            margin-right: 10px;
+        }
+
+        .modal-body a {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            text-align: center;
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .modal-footer button {
+            background-color: #0a66c2;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-footer button:hover {
+            background-color: #004182;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tela principal -->
+    <div class="container">
+        <header class="header">
+            <img src="Imagem/linkedin.jpg" alt="LinkedIn Logo">
+        </header>
+
+        <main class="main-content">
+            <p>Sugestões de pesquisa de vaga e informações gerais</p>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 LinkedIn. Todos os direitos reservados. <a href="#">Política de Privacidade</a></p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">LinkPoints</div>
+            <div class="modal-body">
+                <img src="Imagem/imagem175.jpg" alt="Imagem de LinkPoints">
+                <ul>
+                    <li>Análise de Dados com Power BI</li>
+                    <li>Mindfulness e Produtividade</li>
+                    <li>Marketing Digital para Empreendedores</li>
+                    <li>Liderança e Gestão de Equipes</li>
+                    <li>Técnicas de Negociação</li>
+                    <li>Gestão de Projetos para Iniciantes</li>
+                    <li>Introdução à Programação</li>
+                    <li>Comunicação Eficaz no Trabalho</li>
+                </ul>
+                <a href="#">Termos & Condições</a>
+            </div>
+            <div class="modal-footer">
+                <button id="startButton">Comece Agora</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Redirecionamento ao clicar no botão "Comece Agora"
+        document.getElementById('startButton').addEventListener('click', function () {
+            window.location.href = "linkpoints-benefits.html"; // Redireciona para a próxima página
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status de Emprego</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f3f2ef;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza horizontalmente */
+            justify-content:flex-start; /* Centraliza verticalmente */
+        }
+
+        .header {
+            background-color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header .logo {
+            height: 32px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .radio-container label {
+            font-size: 16px;
+            color: #333;
+            margin-left: 10px;
+        }
+
+        input[type="radio"] {
+            margin: 0;
+            transform: scale(1.2);
+            margin-right: 10px;
+        }
+
+        .continue-button {
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .continue-button:hover {
+            background-color: #005983;
+        }
+
+        /* Footer fixo */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer ul li {
+            font-size: 12px;
+        }
+
+        .footer ul li a {
+            color: #0073b1;
+            text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="Imagem/linkedin.jpg" alt="Logotipo do LinkedIn" class="logo">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="title">Você está procurando emprego?</h1>
+        <p class="subtitle">Só você pode ver sua resposta.</p>
+
+        <form id="jobStatusForm">
+            <div class="radio-container">
+                <input type="radio" name="jobStatus" id="option1" value="Sim" required>
+                <label for="option1">Sim, estou procurando um novo emprego</label>
+            </div>
+            <div class="radio-container">
+                <input type="radio" name="jobStatus" id="option2" value="Talvez">
+                <label for="option2">Não, mas se a oportunidade certa aparecer, talvez</label>
+            </div>
+            <div class="radio-container">
+                <input type="radio" name="jobStatus" id="option3" value="Não">
+                <label for="option3">Não tenho interesse</label>
+            </div>
+            <button type="submit" class="continue-button">Continuar</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <ul class="footer-links">
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+        </ul>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        document.getElementById('jobStatusForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Redireciona para a próxima página após 1 segundo
+            setTimeout(() => {
+                window.location.href = "job-type.html";
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+
+
+

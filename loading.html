@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando...</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-container">
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Logotipo do LinkedIn" class="logo">
+        </header>
+        <main>
+            <p>Carregando...</p>
+            <div class="loading-spinner"></div>
+        </main>
+    </div>
+    <script>
+        // Aguarda 1 segundo e redireciona para a próxima página
+        setTimeout(function () {
+            const nextPage = localStorage.getItem('nextPage') || 'index.html';
+            window.location.href = nextPage;
+        }, 1000); // 1000ms = 1 segundo
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestões de Seguimento | LinkedIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            height: 30px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .follow-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .follow-card {
+            background-color: white;
+            width: 150px;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .follow-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .follow-card h3 {
+            font-size: 14px;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .follow-card p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .follow-card button {
+            margin-top: 10px;
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .follow-card button:hover {
+            background-color: #004182;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px;
+        }
+
+        .continue-button {
+            font-size: 14px;
+            padding: 8px 16px;
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .continue-button:hover {
+            background-color: #004182;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer ul li {
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="Imagem/linkedin.jpg" alt="LinkedIn Logo" class="logo">
+    </header>
+
+    <div class="container">
+        <h1>Siga empresas e pessoas para ficar por dentro dos assuntos do seu interesse</h1>
+        <p>Siga pessoas e empresas para se manter por dentro das atividades do seu setor</p>
+        <div class="follow-container">
+            <div class="follow-card">
+                <img src="Imagem/bradesco.jpg" alt="Bradesco">
+                <h3>Bradesco</h3>
+                <p>Banking<br>2.835.509 seguidores</p>
+                <button>Seguir</button>
+            </div>
+            <div class="follow-card">
+                <img src="Imagem/Forbs.jpg" alt="Forbes Brasil">
+                <h3>Forbes Brasil</h3>
+                <p>Book and Periodical Publishing<br>1.666.048 seguidores</p>
+                <button>Seguir</button>
+            </div>
+            <div class="follow-card">
+                <img src="Imagem/portal vagas.jpg" alt="Portal Vagas">
+                <h3>Portal Vagas</h3>
+                <p>Software Development<br>1.105.641 seguidores</p>
+                <button>Seguir</button>
+            </div>
+            <div class="follow-card">
+                <img src="Imagem/vagas.jpg" alt="Vagas Empregos">
+                <h3>Vagas Empregos</h3>
+                <p>Online Audio and Video Media<br>3.726.536 seguidores</p>
+                <button>Seguir</button>
+            </div>
+            <div class="follow-card">
+                <img src="Imagem/TED.jpg" alt="TED">
+                <h3>TED</h3>
+                <p>Education<br>2.347.621 seguidores</p>
+                <button>Seguir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="nextButton" class="continue-button">Avançar</button>
+    </div>
+
+    <footer>
+        <ul>
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+        </ul>
+    </footer>
+    <script>
+        document.getElementById('nextButton').addEventListener('click', function () {
+            // Mostra a tela de carregamento antes de redirecionar
+          
+            setTimeout(() => {
+                window.location.href = "linkpoints-rewards.html"; // Próxima tela
+            }, 1000); // Tempo de carregamento
+        });
+    </script>
+</body>
+</html>
+

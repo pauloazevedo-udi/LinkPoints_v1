@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Carregada com Sucesso | LinkedIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Adicionado para garantir que o header fique no topo */
+        }
+
+        /* Header padrão */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .logo img {
+            height: 30px;
+        }
+
+        .navbar .search {
+            flex-grow: 1;
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        .navbar input {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .navbar .menu a:hover {
+            color: #0073b1;
+        }
+
+        .navbar .menu .highlight {
+            color: #f90;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal {
+            background-color: #fff;
+            width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .progress-container {
+            margin: 20px 0;
+            width: 100%;
+            height: 10px;
+            background-color: #f3f2ef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%; /* Inicialmente, a largura é 0% */
+            background-color: #0a66c2;
+            transition: width 1s;
+        }
+
+        .modal-body {
+            margin: 20px 0;
+        }
+
+        .modal-body p {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+        }
+
+        .modal-body .success-icon {
+            font-size: 60px;
+            color: green;
+            margin: 10px 0;
+        }
+
+        .modal-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .modal-footer button {
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-footer button:hover {
+            background-color: #004182;
+        }
+
+        /* Close button in top right corner */
+        .modal .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 18px;
+            color: #333;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal .close-btn:hover {
+            color: #0073b1;
+        }
+
+        /* Footer fixo */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer a {
+            color: #0073b1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header padrão -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="Imagem/linkedin.jpg" alt="LinkedIn Logo">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Cargo, competência ou empresa">
+            <input type="text" placeholder="Cidade, estado ou código postal">
+        </div>
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Minha rede</a>
+            <a href="#">Vagas</a>
+            <a href="#">Mensagens</a>
+            <a href="#">Notificações</a>
+            <a href="#">LinkPoint</a>
+            <a href="#">Eu</a>
+            <a href="#" class="highlight">Experimente Premium</a>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <div class="modal-header">Adicionar foto</div>
+
+            <!-- Barra de Carregamento -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="modal-body">
+                <p>Foto carregada com sucesso!</p>
+                <div class="success-icon">✔</div>
+            </div>
+
+            <div class="modal-footer">
+                <button onclick="proceed()">Avançar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer fixo -->
+    <footer class="footer">
+        <ul>
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Função para simular o progresso da barra com 7 partes
+        function simulateProgress() {
+            var progressBar = document.getElementById("progressBar");
+            var width = 0;
+            var parts = 7; // Número total de partes
+
+            // Cada parte representará 100 / 7 por cento
+            var step = 100 / parts;
+
+            var interval = setInterval(function () {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width += step; // Preenche cada parte
+                    progressBar.style.width = width + "%";
+                }
+            }, 1000); // Ajuste o intervalo conforme necessário
+        }
+
+        // Chama a função ao carregar a página
+        simulateProgress();
+
+        function closeModal() {
+            window.close();
+        }
+
+        function proceed() {
+            window.location.href = "photo-upload-success.html"; // Substitua pelo nome correto da próxima página
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+

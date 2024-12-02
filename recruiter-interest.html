@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesse para Recrutadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f3f2ef;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 30px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px 60px; /* Espaçamento para evitar sobreposição com header e footer */
+        }
+
+        .recruiter-container {
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .recruiter-container img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .toggle-section {
+            text-align: left;
+        }
+
+        .toggle-section p:first-of-type {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .toggle-section p:nth-of-type(2) {
+            font-size: 14px;
+            color: #606060;
+            margin-bottom: 15px;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toggle-container span {
+            margin-left: 8px;
+            font-size: 14px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #0a66c2;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+
+        .continue-button {
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .continue-button:hover {
+            background-color: #004182;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+            font-size: 12px;
+        }
+
+        .footer-links a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="Imagem/linkedin.jpg" alt="Logotipo do LinkedIn" class="logo">
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="recruiter-container">
+            <h1>Informe os recrutadores sobre seu interesse em novas vagas</h1>
+            <img src="Imagem/Screenshot_170.jpg" alt="Imagem ilustrativa">
+            <div class="toggle-section">
+                <p>Compartilhar com recrutadores</p>
+                <p>Isso exibirá às pessoas que utilizam o LinkedIn Recruiter que você está buscando emprego.</p>
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="recruiterToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="toggleStatus">Desativado</span>
+                </div>
+            </div>
+            <p style="font-size: 14px; color: #606060; max-width: 500px; margin: auto;">
+                Tomamos medidas para não exibir seu interesse a recrutadores da sua empresa atual, mas não podemos garantir privacidade total. 
+                <a href="#" style="color: #0a66c2; text-decoration: none;">Saiba mais sobre sua privacidade.</a>
+            </p>
+            <button class="continue-button" id="continueButton">Avançar</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="footer-links">
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('recruiterToggle');
+        const statusText = document.getElementById('toggleStatus');
+
+        toggle.addEventListener('change', () => {
+            statusText.textContent = toggle.checked ? 'Ativado' : 'Desativado';
+        });
+
+        document.getElementById('continueButton').addEventListener('click', () => {
+            setTimeout(() => {
+                window.location.href = "connections.html";
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+
+
+
+

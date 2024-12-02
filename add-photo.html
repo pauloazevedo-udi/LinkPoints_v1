@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Foto | LinkedIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+        }
+
+        /* Header padrão */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo img {
+            height: 30px;
+        }
+
+        .navbar .search {
+            flex-grow: 1;
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        .navbar input {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .navbar .menu a:hover {
+            color: #0073b1;
+        }
+
+        .navbar .menu .highlight {
+            color: #f90;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal {
+            background-color: #fff;
+            width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background-color: #0a66c2;
+            color: #fff;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .modal-body h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .modal-body img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ddd;
+        }
+
+        .modal-footer button {
+            background-color: #0a66c2;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-footer button:hover {
+            background-color: #004182;
+        }
+
+        .modal-footer a {
+            color: #0a66c2;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .modal-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer fixo */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer a {
+            color: #0073b1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header padrão -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="Imagem/linkedin.jpg" alt="LinkedIn Logo">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Cargo, competência ou empresa">
+            <input type="text" placeholder="Cidade, estado ou código postal">
+        </div>
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Minha rede</a>
+            <a href="#">Vagas</a>
+            <a href="#">Mensagens</a>
+            <a href="#">Notificações</a>
+            <a href="#">LinkPoint</a>
+            <a href="#">Eu</a>
+            <a href="#" class="highlight">Experimente Premium</a>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">Adicionar Foto</div>
+            <div class="modal-body">
+                <h2>A foto não precisa ser profissional!</h2>
+                <p>Ela apenas precisa representar quem você é.</p>
+                <div>
+                    <img src="Imagem/rosto1.jpg" alt="Exemplo 1">
+                    <img src="Imagem/rosto2.jpg" alt="Exemplo 2">
+                    <img src="Imagem/rosto 3.jpg" alt="Exemplo 3">
+                    <img src="Imagem/rosto4.jpg" alt="Exemplo 4">
+                    <img src="Imagem/rosto5.jpg" alt="Exemplo 5">
+                </div>
+                <p>No LinkedIn, exigimos que os usuários usem a identidade verdadeira. Carregue ou tire uma foto de si. Depois, ajuste conforme necessário.</p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="proceed()">Utilizar câmera</button>
+                <button onclick="proceed()">Carregar foto</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer fixo -->
+    <footer class="footer">
+        <ul>
+            <li>&copy; 2024 LinkedIn</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Contrato do Usuário</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Redireciona para a página "photo-upload-success.html" quando qualquer botão for clicado
+        function proceed() {
+            window.location.href = "photo-upload-success.html"; // Substitua com o nome da próxima página
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+

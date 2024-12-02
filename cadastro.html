@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="Imagem/linkedin.jpg" alt="Logotipo do LinkedIn" class="logo">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h1 class="title">Aproveite sua vida profissional ao máximo</h1>
+            <div class="form-container">
+                <form id="cadastroForm">
+                    <label for="firstName">Nome</label>
+                    <input type="text" id="firstName" placeholder="Digite seu nome" required>
+                
+                    <label for="lastName">Sobrenome</label>
+                    <input type="text" id="lastName" placeholder="Digite seu sobrenome" required>
+                
+                    <button type="submit" class="signup-button">Continuar</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <ul class="footer-links">
+                <li>&copy; 2024 LinkedIn</li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Acessibilidade</a></li>
+                <li><a href="#">Contrato do Usuário</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+        // Captura o formulário e adiciona o evento de submissão
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão do formulário
+            
+
+            // Após 1 segundo, redireciona para a tela profile.html
+            setTimeout(() => {
+                window.location.href = "profile.html";
+            }, 1000); // 1000ms = 1 segundo
+        });
+    </script>
+</body>
+</html>

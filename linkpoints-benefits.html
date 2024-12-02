@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkPoints | LinkedIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+        }
+    
+        /* Navbar Header */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        .navbar .logo img {
+            height: 30px;
+        }
+    
+        .navbar .search {
+            flex-grow: 1;
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+    
+        .navbar input {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+    
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    
+        .navbar .menu a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+    
+        .navbar .menu a:hover {
+            color: #0073b1;
+        }
+    
+        .navbar .menu .highlight {
+            color: #f90;
+        }
+    
+        /* Section - Ganhe LinkPoints */
+        .section-header {
+            background-color: #0073b1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    
+        .section-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    
+        .section-header p {
+            margin: 5px 0 0;
+        }
+    
+        /* Form Section */
+        .form-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+    
+        .form-section form {
+            max-width: 400px;
+            margin: auto;
+        }
+    
+        .form-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        .form-section button {
+            background-color: #0073b1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    
+        .terms-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+    
+        .terms-container input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    
+        /* Benefits Section */
+        .benefits-section {
+            text-align: center;
+            padding: 20px;
+        }
+    
+        .benefits-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+    
+        .benefits-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    
+        .benefit {
+            text-align: center;
+            max-width: 200px
+            ;
+        }
+
+        .benefit img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .benefit h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Points Section */
+        .points-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .points-summary {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .points-summary div {
+            text-align: center;
+        }
+
+        .points-summary span {
+            font-size: 24px;
+            color: #0073b1;
+        }
+
+        .points-summary p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .points-summary b {
+            font-size: 16px;
+            color: #0073b1;
+        }
+
+        .points-table {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .points-table th,
+        .points-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .points-table th {
+            background-color: #f3f2ef;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .points-table td {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .points-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            background-color: #f3f2ef;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 12px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            height: 30px;
+        }
+
+        .footer-signup {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-signup input {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .footer-signup button {
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-signup button:hover {
+            background-color: #005983;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #0073b1;
+        }
+
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="Imagem/linkedin.jpg" alt="LinkedIn Logo">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Cargo, competência ou empresa">
+            <input type="text" placeholder="Cidade, estado ou código postal">
+        </div>
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Minha rede</a>
+            <a href="#">Vagas</a>
+            <a href="#">Mensagens</a>
+            <a href="#">Notificações</a>
+            <a href="#">LinkPoint</a>
+            <a href="#">Eu</a>
+            <a href="#" class="highlight">Experimente Premium</a>
+        </div>
+    </header>
+
+    <!-- Ganhe LinkPoints Section -->
+    <section class="section-header">
+        <h1>Ganhe LinkPoints ao completar seu perfil</h1>
+        <p>Use seus LinkPoints para acessar cursos no LinkedIn Learning e impulsionar sua carreira!</p>
+    </section>
+
+    <!-- Cadastro Section -->
+    <section class="form-section">
+        <h2>Cadastre-se para começar a ganhar recompensas!</h2>
+        <form>
+            <label for="name"></label>
+            <input type="text" id="name" placeholder="Digite seu nome completo">
+    
+            <label for="email"></label>
+            <input type="email" id="email" placeholder="Digite seu email">
+    
+            <!-- Caixa de seleção com texto ao lado -->
+            <div class="terms-container">
+                <input type="checkbox" id="terms">
+                <label for="terms">Eu concordo com <a href="#">Termos e Condições</a></label>
+            </div>
+    
+            <button type="submit">Junte-se agora gratuitamente!</button>
+        </form>
+        <p>Já tem uma conta? <a href="#">Login</a></p>
+    </section>
+
+
+    <!-- Benefícios Section -->
+    <section class="benefits-section">
+        <h2>BENEFÍCIOS</h2>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <img src="Imagem/analise de dados.jpg" alt="Análise de Dados">
+                <h3>Análise de Dados com Power BI</h3>
+            </div>
+            <div class="benefit">
+                <img src="Imagem/Técnica de negociação.jpg" alt="Técnicas de Negociação">
+                <h3>Técnicas de Negociação</h3>
+            </div>
+            <div class="benefit">
+                <img src="Imagem/Gestão.jpg" alt="Gestão de Projetos">
+                <h3>Gestão de Projetos para Iniciantes</h3>
+            </div>
+            <div class="benefit">
+                <img src="Imagem/liderança.jpg" alt="Liderança">
+                <h3>Liderança e Gestão de Equipes</h3>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Pontos Section -->
+    <section class="points-section">
+        <h2>Pontos</h2>
+        <!-- Tabela com conquistas -->
+        <div class="points-summary">
+            <div>
+                <span>&#10004;</span>
+                <p>Inglês<br><b>+300 p.</b></p>
+            </div>
+            <div>
+                <span>&#10004;</span>
+                <p>Excel<br><b>+500 p.</b></p>
+            </div>
+            <div>
+                <span>&#10004;</span>
+                <p>Comunicação<br><b>+800 p.</b></p>
+            </div>
+        </div>
+        <table class="points-table">
+            <thead>
+                <tr>
+                    <th>Conquista</th>
+                    <th>Pontos</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Foto Adicionada</td>
+                    <td>+50 points</td>
+                    <td>22/12/2021</td>
+                </tr>
+                <tr>
+                    <td>Adicionar Idioma</td>
+                    <td>+100 points</td>
+                    <td>22/12/2021</td>
+                </tr>
+                <tr>
+                    <td>Sessão Sobre</td>
+                    <td>+100 points</td>
+                    <td>22/12/2021</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo">
+                <form class="footer-signup">
+                    <label for="footer-email">Cadastre-se</label>
+                    <input type="email" id="footer-email" placeholder="e-mail">
+                    <button type="submit">&#10148;</button>
+                </form>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Sobre</h4>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Jogos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Política da Marca</h4>
+                    <ul>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Política de Direitos autorais</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Adiciona o evento de redirecionamento ao botão de submissão
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio do formulário
+            window.location.href = "add-photo.html"; // Redireciona para a tela add-photo.html
+        });
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="Imagem/linkedin.jpg" alt="Logotipo do LinkedIn" class="logo">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h1 class="title">Complete seu perfil</h1>
+            <p class="subtitle">Preencha as informações abaixo para continuar</p>
+            <div class="form-container">
+                <form id="profileForm">
+                    <label for="location">Localidade *</label>
+                    <input type="text" id="location" placeholder="Ex: São Paulo, SP" required>
+                    
+                    <label for="jobTitle">Cargo mais recente *</label>
+                    <input type="text" id="jobTitle" placeholder="Ex: Desenvolvedor" required>
+                    
+                    <label for="company">Empresa mais recente *</label>
+                    <input type="text" id="company" placeholder="Ex: LinkedIn" required>
+                    
+                    <button type="submit" class="signup-button">Continuar</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <ul class="footer-links">
+                <li>&copy; 2024 LinkedIn</li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Acessibilidade</a></li>
+                <li><a href="#">Contrato do Usuário</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+        // Captura o formulário e adiciona o evento de submissão
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão do formulário
+            
+        
+
+            // Após 1 segundo, redireciona para a tela new-job-status.html
+            setTimeout(() => {
+                window.location.href = "new-job-status.html";
+            }, 1000); // 1000ms = 1 segundo
+        });
+    </script>
+</body>
+</html>
+
